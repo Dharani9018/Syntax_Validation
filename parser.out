@@ -1,0 +1,77 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    COLON
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement
+Rule 2     program -> statement program
+Rule 3     statements -> statement
+Rule 4     statements -> statement statements
+Rule 5     statement -> IF LBRACKET condition RBRACKET THEN statements FI
+Rule 6     statement -> IF LBRACKET condition RBRACKET THEN statements ELSE statements FI
+Rule 7     statement -> FOR VARIABLE IN condition DO statements DONE
+Rule 8     statement -> WHILE LBRACKET condition RBRACKET DO statements DONE
+Rule 9     statement -> FUNCTION VARIABLE LPAREN RPAREN LFBRACKET statements RFBRACKET
+Rule 10    statement -> ASSIGN
+Rule 11    statement -> ECHO QUOTES statements QUOTES
+Rule 12    statement -> ECHO DOLLAR VARIABLE
+Rule 13    condition -> expression
+Rule 14    condition -> expression operator expression
+Rule 15    expression -> VARIABLE
+Rule 16    expression -> NUMBER
+Rule 17    expression -> expression operator expression
+Rule 18    operator -> PLUS
+Rule 19    operator -> MINUS
+Rule 20    operator -> MUL
+Rule 21    operator -> DIV
+Rule 22    operator -> GT
+Rule 23    operator -> LT
+Rule 24    operator -> EQUAL
+
+Terminals, with rules where they appear
+
+COLON                : 
+DIV                  : 21
+DO                   : 7 8
+DOLLAR               : 12
+DONE                 : 7 8
+ECHO                 : 11 12
+ELSE                 : 6
+FI                   : 5 6
+FOR                  : 7
+FUNCTION             : 9
+GT                   : 22
+IF                   : 5 6
+IN                   : 7
+LBRACKET             : 5 6 8
+LFBRACKET            : 9
+LPAREN               : 9
+LT                   : 23
+MINUS                : 19
+MUL                  : 20
+NUMBER               : 16
+PLUS                 : 18
+QUOTES               : 11 11
+RBRACKET             : 5 6 8
+RFBRACKET            : 9
+RPAREN               : 9
+THEN                 : 5 6
+VARIABLE             : 7 9 12 15
+WHILE                : 8
+error                : 
+
+Nonterminals, with rules where they appear
+
+ASSIGN               : 10
+EQUAL                : 24
+condition            : 5 6 7 8
+expression           : 13 14 14 17 17
+operator             : 14 17
+program              : 2 0
+statement            : 1 2 3 4
+statements           : 4 5 6 6 7 8 9 11
+
